@@ -7,40 +7,35 @@ const projects = [
     description: "Modern and elegant frontend website with clean UI/UX design built with React and Tailwind CSS.",
     live: "https://lushosafrontend.vercel.app/",
     tech: ["React", "TypeScript", "Tailwind CSS"],
-    image: "https://picsum.photos/id/1015/600/400",     // Luxury fashion / beauty style
-    category: "Frontend"
+    image: "/lushosa.png",
   },
   {
     title: "Highscore EdTech",
-    description: "Educational technology platform focused on academic excellence, learning management and student success.",
+    description: "Educational technology platform focused on academic excellence and student success.",
     live: "https://highscoreedtech.com/",
     tech: ["React", "Go", "PostgreSQL", "Tailwind"],
-    image: "https://picsum.photos/id/201/600/400",       // Education / classroom / learning
-    category: "Fullstack"
+    image: "/highscore.png",
   },
   {
     title: "Venny Designo",
-    description: "Creative design agency website showcasing modern design work with smooth animations and elegant layout.",
+    description: "Creative design agency website with smooth animations and modern design system.",
     live: "https://venny-designo.netlify.app/",
     tech: ["React", "Tailwind CSS", "Framer Motion"],
-    image: "https://picsum.photos/id/133/600/400",       // Creative design / portfolio style
-    category: "Frontend"
+    image: "/venny.png",
   },
   {
     title: "RosyMax Pharmacy",
-    description: "Professional pharmacy website with product catalog, health information, and clean user interface.",
+    description: "Professional pharmacy website with product catalog and wholesale supplies.",
     live: "https://rosymaxpharmacy.com/",
     tech: ["React", "Tailwind CSS"],
-    image: "https://picsum.photos/id/1077/600/400",      // Medical, pharmacy, healthcare
-    category: "Frontend"
+    image: "/rosymax.png",
   },
   {
     title: "Maria Rosa Mystica Parish",
-    description: "Official website for Maria Rosa Mystica Parish featuring events, sermons, gallery, and community information.",
+    description: "Official website for Maria Rosa Mystica Parish featuring events, sermons and community information.",
     live: "https://mariarosamysticaparish.org/",
     tech: ["React", "Tailwind CSS"],
-    image: "https://picsum.photos/id/1016/600/400",      // Church, spiritual, community
-    category: "Frontend"
+    image: "/maria-rosa.png",
   }
 ];
 
@@ -57,41 +52,38 @@ export default function Projects() {
           >
             Featured Projects
           </motion.h2>
-          <p className="text-zinc-400 text-lg">Real projects I have designed, developed and deployed</p>
+          <p className="text-zinc-400 text-lg">Real projects I have designed and developed</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 60 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.08 }}
+              transition={{ delay: index * 0.1 }}
               whileHover={{ y: -12 }}
               className="group bg-zinc-900 border border-zinc-800 hover:border-violet-500 rounded-3xl overflow-hidden transition-all duration-300"
             >
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-56 overflow-hidden bg-zinc-800">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               </div>
 
               <div className="p-7">
-                <h3 className="text-2xl font-semibold mb-3 text-white">{project.title}</h3>
-                <p className="text-zinc-400 text-[15px] leading-relaxed mb-6 line-clamp-3">
+                <h3 className="text-2xl font-semibold mb-3">{project.title}</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-3">
                   {project.description}
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech, i) => (
-                    <span 
-                      key={i} 
-                      className="text-xs px-3 py-1 bg-zinc-800 text-zinc-300 rounded-full"
-                    >
+                    <span key={i} className="text-xs px-3 py-1 bg-zinc-800 text-zinc-300 rounded-full">
                       {tech}
                     </span>
                   ))}

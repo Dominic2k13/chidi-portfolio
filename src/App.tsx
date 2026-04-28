@@ -15,16 +15,12 @@ function App() {
       <Projects />
       <Contact />
 
-      {/* Projects and Contact coming next */}
-      <section id="projects" className="py-24 text-center bg-zinc-900">
-        <h2 className="text-5xl font-semibold mb-8">Projects</h2>
-        <p className="text-zinc-400">We'll build beautiful animated project cards here next</p>
-      </section>
-
-      <section id="contact" className="py-24 text-center">
-        <h2 className="text-5xl font-semibold mb-8">Get In Touch</h2>
-        <p className="text-zinc-400">Contact form coming soon</p>
-      </section>
+      {/* Footer */}
+      <footer className="bg-zinc-950 border-t border-zinc-800 py-8">
+        <div className="max-w-6xl mx-auto px-6 text-center text-zinc-500 text-sm">
+          © {new Date().getFullYear()} Ijeoma Chidiebere Dominic. All Rights Reserved.
+        </div>
+      </footer>
     </div>
   );
 }
