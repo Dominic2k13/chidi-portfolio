@@ -1,38 +1,46 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "Fullstack online store built with React, Go, and PostgreSQL. Features cart, payment integration, and admin dashboard.",
-    tech: ["React", "TypeScript", "Go", "PostgreSQL", "Tailwind"],
-    github: "#",
-    live: "#",
-    category: "Fullstack"
-  },
-  {
-    title: "Task Management App",
-    description: "Beautiful productivity app with real-time sync using Supabase and Flutter for mobile.",
-    tech: ["Flutter", "Dart", "Supabase", "Tailwind"],
-    github: "#",
-    live: "#",
-    category: "Mobile"
-  },
-  {
-    title: "AI Portfolio Generator",
-    description: "Web app that generates personalized portfolios using modern AI tools and Firebase backend.",
-    tech: ["React", "TypeScript", "Firebase", "Tailwind"],
-    github: "#",
-    live: "#",
+    title: "Lushosa Frontend",
+    description: "Modern and elegant frontend website with clean UI/UX design built with React and Tailwind CSS.",
+    live: "https://lushosafrontend.vercel.app/",
+    tech: ["React", "TypeScript", "Tailwind CSS"],
+    image: "https://picsum.photos/id/1015/600/400",     // Luxury fashion / beauty style
     category: "Frontend"
   },
   {
-    title: "Blog Platform",
-    description: "Modern blogging website with markdown support, comments, and SEO optimization.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
-    github: "#",
-    live: "#",
+    title: "Highscore EdTech",
+    description: "Educational technology platform focused on academic excellence, learning management and student success.",
+    live: "https://highscoreedtech.com/",
+    tech: ["React", "Go", "PostgreSQL", "Tailwind"],
+    image: "https://picsum.photos/id/201/600/400",       // Education / classroom / learning
     category: "Fullstack"
+  },
+  {
+    title: "Venny Designo",
+    description: "Creative design agency website showcasing modern design work with smooth animations and elegant layout.",
+    live: "https://venny-designo.netlify.app/",
+    tech: ["React", "Tailwind CSS", "Framer Motion"],
+    image: "https://picsum.photos/id/133/600/400",       // Creative design / portfolio style
+    category: "Frontend"
+  },
+  {
+    title: "RosyMax Pharmacy",
+    description: "Professional pharmacy website with product catalog, health information, and clean user interface.",
+    live: "https://rosymaxpharmacy.com/",
+    tech: ["React", "Tailwind CSS"],
+    image: "https://picsum.photos/id/1077/600/400",      // Medical, pharmacy, healthcare
+    category: "Frontend"
+  },
+  {
+    title: "Maria Rosa Mystica Parish",
+    description: "Official website for Maria Rosa Mystica Parish featuring events, sermons, gallery, and community information.",
+    live: "https://mariarosamysticaparish.org/",
+    tech: ["React", "Tailwind CSS"],
+    image: "https://picsum.photos/id/1016/600/400",      // Church, spiritual, community
+    category: "Frontend"
   }
 ];
 
@@ -49,63 +57,54 @@ export default function Projects() {
           >
             Featured Projects
           </motion.h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-            Here are some of the projects I've built. Each one showcases different skills and technologies.
-          </p>
+          <p className="text-zinc-400 text-lg">Real projects I have designed, developed and deployed</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
+              transition={{ delay: index * 0.08 }}
+              whileHover={{ y: -12 }}
               className="group bg-zinc-900 border border-zinc-800 hover:border-violet-500 rounded-3xl overflow-hidden transition-all duration-300"
             >
-              {/* Project Image Placeholder */}
-              <div className="h-56 bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center relative overflow-hidden">
-                <div className="text-6xl text-zinc-700 group-hover:scale-110 transition-transform duration-500">
-                  💻
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <div className="relative h-56 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               </div>
 
-              <div className="p-8">
+              <div className="p-7">
                 <h3 className="text-2xl font-semibold mb-3 text-white">{project.title}</h3>
-                <p className="text-zinc-400 mb-6 leading-relaxed">{project.description}</p>
+                <p className="text-zinc-400 text-[15px] leading-relaxed mb-6 line-clamp-3">
+                  {project.description}
+                </p>
 
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-8">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech, i) => (
                     <span 
-                      key={i}
-                      className="text-xs px-3 py-1 bg-zinc-800 text-zinc-300 rounded-full border border-zinc-700"
+                      key={i} 
+                      className="text-xs px-3 py-1 bg-zinc-800 text-zinc-300 rounded-full"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Links */}
-                <div className="flex gap-4">
-                  <a 
-                    href={project.github}
-                    target="_blank"
-                    className="flex items-center gap-2 px-6 py-3 bg-zinc-800 hover:bg-zinc-700 rounded-2xl text-sm font-medium transition-all"
-                  >
-                    <FaGithub /> Code
-                  </a>
-                  <a 
-                    href={project.live}
-                    target="_blank"
-                    className="flex items-center gap-2 px-6 py-3 bg-violet-600 hover:bg-violet-700 rounded-2xl text-sm font-medium transition-all"
-                  >
-                    <FaExternalLinkAlt /> Live Demo
-                  </a>
-                </div>
+                <a 
+                  href={project.live} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 py-3.5 rounded-2xl text-sm font-medium transition-all w-full"
+                >
+                  <FaExternalLinkAlt /> View Live Project
+                </a>
               </div>
             </motion.div>
           ))}
