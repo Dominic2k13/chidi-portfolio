@@ -36,6 +36,13 @@ const projects = [
     live: "https://mariarosamysticaparish.org/",
     tech: ["React", "Tailwind CSS"],
     image: "/maria-rosa.png",
+  },
+  {
+    title: "JDPC Enugu",
+    description: "Official website for Justice, Development and Peace Commission (JDPC) Enugu Diocese - a faith-based NGO focused on social justice, good governance, and community development.",
+    live: "https://jdpc.netlify.app/",           // Change this later to your actual Netlify URL
+    tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    image: "/jdpc-logo.jpeg",
   }
 ];
 

@@ -40,7 +40,7 @@ export default function Navbar() {
               transition={{ duration: 0.2 }}
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-violet-400 group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-violet-400 group-hover:w-full transition-all duration-300"></span>
             </motion.a>
           ))}
         </div>
